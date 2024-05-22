@@ -8,6 +8,10 @@ const token = process.env.TOEKN;
 
 app.use(express.json());
 
+app.get("/", async (req, res) => {
+  res.send("Hello world");
+});
+
 app.post("/generate-image", async (req, res) => {
   try {
     const data = { inputs: req.body.prompt }; // Expect 'inputs' in the body of the POST request
